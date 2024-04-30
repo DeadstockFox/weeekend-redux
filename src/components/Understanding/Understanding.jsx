@@ -1,15 +1,17 @@
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 
 const Understanding = () => {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleClick = (e) => {
         e.preventDefault();
-        let action = {type: "UNDERSTANDING_SUBMIT", payload: e.target.Understanding.value};
+        let action = {type: "UNDERSTANDING_SUBMIT", payload: Number(e.target.Understanding.value)};
         dispatch(action);
-        e.target.reset();
+        history.push('/Support')
     }
 
     return (

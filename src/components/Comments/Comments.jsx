@@ -2,23 +2,23 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 
-const Feeling = () => {
+const Comments = () => {
 
     const dispatch = useDispatch();
     const history = useHistory();
 
     const handleClick = (e) => {
         e.preventDefault();
-        let action = {type: "FEELING_SUBMIT", payload: Number(e.target.Feeling.value)};
+        let action = {type: "COMMENTS_SUBMIT", payload: e.target.Comments.value};
         dispatch(action);
-        history.push('/Understanding');
+        history.push('/Review')
     }
 
     return (
         <>
-        <h2>How are you feeling?</h2>
+        <h2>Any comments you'd like to give us?</h2>
         <form onSubmit={handleClick}>
-        <input data-testid="input" placeholder={"Answer"} type={"number"} name={"Feeling"}/>
+        <input data-testid="input" placeholder={"Answer"} type={"text"} name={"Comments"}/>
         <button data-testid="next">Submit</button>
         </form>
         
@@ -27,4 +27,4 @@ const Feeling = () => {
 
 };
 
-export default Feeling;
+export default Comments;

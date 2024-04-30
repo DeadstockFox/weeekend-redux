@@ -1,15 +1,17 @@
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 
 const Support = () => {
 
     const dispatch = useDispatch()
+    const history = useHistory();
 
     const handleClick = (e) => {
         e.preventDefault();
-        let action = {type: "SUPPORT_SUBMIT", payload: e.target.Support.value};
+        let action = {type: "SUPPORT_SUBMIT", payload: Number(e.target.Support.value)};
         dispatch(action);
-        e.target.reset();
+        history.push('/Comments');
     }
 
     return (

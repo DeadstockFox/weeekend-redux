@@ -5,6 +5,15 @@ const pool = require('../modules/pool')
 
 // TODO: This route adds a new feedback entry
 router.post('/', (req, res) => {
+    console.log(req.body)
+    const queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+    VALUES ($1, $2, $3, $4);`;
+
+    pool.query(queryText,[req.body[0], req.body[1], req.body[2], req.body[3]]).then((r) => {
+        res.sendStatus(201);
+    }).catch((e) => {
+        console.log('Error in server-side POST request', e);
+    })
 
 })
 

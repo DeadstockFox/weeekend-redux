@@ -14,6 +14,10 @@ const SurveyForm = (state=[], action) => {
         return [...state, action.payload];
     } else if (action.type === "SUPPORT_SUBMIT") {
         return [...state, action.payload];
+    }  else if (action.type === "COMMENTS_SUBMIT") {
+        return [...state, action.payload];
+    }   else if (action.type === "NEW_FORM") {
+        return state = [];
     }
     return state;
 }

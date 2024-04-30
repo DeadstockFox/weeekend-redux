@@ -5,6 +5,9 @@ import Header from '../Header/Header.jsx';
 import Feeling from '../Feeling/Feeling.jsx';
 import Understanding from '../Understanding/Understanding.jsx';
 import Support from '../Support/Support.jsx';
+import Comments from '../Comments/Comments.jsx';
+import Review from '../Review/Review.jsx';
+import Thank from '../Thank/Thank.jsx';
 
 import './App.css';
 
@@ -18,7 +21,10 @@ function App() {
       <Header />
           <Route exact path="/"> <Feeling/> </Route>
           <Route exact path="/Understanding"> <Understanding/> </Route>
-          <Route exact path="/Suport"> <Support/> </Route>
+          <Route exact path="/Support"> <Support/> </Route>
+          <Route exact path="/Comments"> <Comments/></Route>
+          <Route exact path="/Review"> <Review/></Route>
+          <Route exact path="/thank"><Thank/></Route>
       </Router>
 
     </div>
